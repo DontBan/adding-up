@@ -58,11 +58,11 @@ rl.on('close', () => {
         // 前者pair1を後者pair2より前にしたいときは、負の整数、
         // pair2をpair1より前にしたいときは、正の整数
         // 並びをそのままにしたいときは、0である必要がある
-        return pair2[1].change - pair2[1].change;
+        return pair1[1].change - pair2[1].change;
     });
 //    console.log(rankingArray);
-    const rankingStrings = rankingArray.map(([key, value]) => {
-        return key + ': ' + value.popu10 + '=>' + value.popu15 + ' 変化率:' + value.change;
+    const rankingStrings = rankingArray.map(([key, value], i) => {
+        return (i + 1) + '位 ' + key + ': ' + value.popu10 + '=>' + value.popu15 + ' 変化率:' + value.change;
     });
     console.log(rankingStrings);
 });
